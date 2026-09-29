@@ -248,7 +248,7 @@ def _dpapi_protect(data):
     buf=ctypes.create_string_buffer(raw)
     inp=_DATA_BLOB(len(raw),ctypes.cast(buf,ctypes.POINTER(ctypes.c_byte)))
     out=_DATA_BLOB()
-    if not ctypes.windll.crypt32.CryptProtectData(ctypes.byref(inp),'NaverMailManager',None,None,None,0,ctypes.byref(out)):
+    if not ctypes.windll.crypt32.CryptProtectData(ctypes.byref(inp),None,None,None,None,0,ctypes.byref(out)):
         raise ctypes.WinError()
     try:
         return ctypes.string_at(out.pbData,out.cbData)
@@ -880,13 +880,40 @@ class App(tk.Tk):
 
     def _kakao_send_text(self, text):
         token=self._kakao_access_token()
-        template={'object_type':'text','text':text[:1800],'link':{'web_url':'https://mail.naver.com','mobile_web_url':'https://mail.naver.com'}}
+        template={'object_type':'text','text':text[:1800],
+                  'link':{'web_url':'https://mail.naver.com','mobile_web_url':'https://mail.naver.com'}}
         form=urllib.parse.urlencode({'template_object':json.dumps(template,ensure_ascii=False)}).encode()
-        req=urllib.request.Request('https://kapi.kakao.com/v2/api/talk/memo/default/send',data=form,headers={'Authorization':'Bearer '+token,'Content-Type':'application/x-www-form-urlencoded;charset=utf-8'})
-        out=json.loads(urllib.request.urlopen(req,timeout=20).read().decode())
-        if out.get('result_code')!=0: raise RuntimeError('카카오 발송 실패: '+str(out))
+        req=urllib.request.Request(
+            'https://kapi.kakao.com/v2/api/talk/memo/default/send',
+            data=form,
+            headers={'Authorization':'Bearer '+token,
+                     'Content-Type':'application/x-www-form-urlencoded;charset=utf-8'})
+        try:
+            raw=urllib.request.urlopen(req,timeout=20).read().decode('utf-8','replace')
+        except urllib.error.HTTPError as e:
+            try:
+                body=e.read().decode('utf-8','replace')
+            except Exception:
+                body=''
+            code=''; msg=''
+            try:
+                detail=json.loads(body)
+                code=detail.get('code',detail.get('error_code',''))
+                msg=detail.get('msg',detail.get('error_description',''))
+            except Exception:
+                pass
+            raise RuntimeError(
+                f'Kakao API HTTP {e.code} {e.reason}\n'
+                f'code: {code if code != "" else "(없음)"}\n'
+                f'msg: {msg if msg else "(없음)"}\n'
+                f'응답: {body[:1200] if body else "(응답 본문 없음)"}')
+        try:
+            out=json.loads(raw)
+        except Exception:
+            raise RuntimeError('카카오 응답 JSON 해석 실패: '+raw[:1200])
+        if out.get('result_code')!=0:
+            raise RuntimeError('카카오 발송 실패: '+json.dumps(out,ensure_ascii=False))
         return True
-
     def kakao_test(self):
         try:
             self._kakao_send_text('[Naver Mail Manager]\n카카오톡 나와의 채팅 연결 테스트가 정상 완료되었습니다.')
@@ -986,18 +1013,20 @@ class App(tk.Tk):
                     'SELECT 1 FROM briefing_runs WHERE run_day=? AND slot=?',(day,bt)).fetchone()
                 if nowdt>=target and not done:
                     due.append(bt)
-            for bt in due:
-                try:
-                    if self.session_pw:
-                        self.collect(auto_mode=True)
-                    self.send_kakao_briefing(bt,quiet=True)
-                    self.con.execute(
-                        'INSERT OR REPLACE INTO briefing_runs(run_day,slot,ran_at,status) VALUES(?,?,?,?)',
-                        (day,bt,datetime.now().strftime('%Y-%m-%d %H:%M:%S'),'ok'))
-                    self.con.commit()
-                except Exception as e:
-                    self.status.set(f'{bt} 브리핑 오류: {e}')
-                    break
+            if due:
+                if not self.session_pw:
+                    self.status.set('자동 브리핑 대기: 네이버 인증 저장이 필요합니다.')
+                    return
+                current_slot=due[-1]
+                self.collect(auto_mode=True)
+                self.send_kakao_briefing(current_slot,quiet=True)
+                ran=datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+                self.con.executemany(
+                    'INSERT OR REPLACE INTO briefing_runs(run_day,slot,ran_at,status) VALUES(?,?,?,?)',
+                    [(day,bt,ran,'ok') for bt in due])
+                self.con.commit()
+        except Exception as e:
+            self.status.set(f'자동 브리핑 오류: {e}')
         finally:
             self.schedule_brief_watch()
     def collect(self, auto_mode=False):
