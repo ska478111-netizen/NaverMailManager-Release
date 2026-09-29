@@ -1,7 +1,7 @@
 {
-  "version":"2.7.4","active":true,"deployment_mode":"text-files","entry":"app.py",
-  "files":[{"path":"app.py","url":"https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.7.4/app.py","sha256":"edca08a3a153cd3592b2e3ce414b340f563d571e10ed22dd5eb7676ffe8ca938","size":39364}],
+  "version":"2.8","active":true,"deployment_mode":"text-files","entry":"app.py",
+  "files":[{"path":"app.py","url":"https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.8/app.py","sha256":"1b25678d84213025f23ca0eb75b3a6cc66848a443a9a85a513d5e76cbd503389","size":40652}],
   "min_launcher":"1.1",
   "safety":{"preserve_user_data":true,"syntax_check_before_switch":true,"rollback_on_failure":true,"automatic_server_mail_delete":false},
-  "note":"v2.7.4 rebuilds focus review as an independent DB-driven flow. Opening focus review ignores the main-list selection; learning is invoked only by explicit buttons inside the review window."
+  "note":"v2.8 adds local recommendation labels and reasons to independent focus review. Recommendations never execute automatically; the user explicitly approves keep/not-must/ad actions."
 }
