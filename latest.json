@@ -1,14 +1,14 @@
 {
-  "version": "3.0.1",
+  "version": "3.1",
   "active": true,
   "deployment_mode": "text-files",
   "entry": "app.py",
   "files": [
     {
       "path": "app.py",
-      "url": "https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v3.0.1/app.py",
-      "sha256": "1c4d71036bd15761feecef6e262998a2da43c979f4159f2e4f5066983fa5bcd7",
-      "size": 2362
+      "url": "https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v3.1/app.py",
+      "sha256": "e880b982881142f2a90ee1d0ef999d1d0583be1d06bc4d31d6d1c0feb2a6ae08",
+      "size": 62556
     }
   ],
   "min_launcher": "1.1",
@@ -18,5 +18,5 @@
     "rollback_on_failure": true,
     "automatic_server_mail_delete": false
   },
-  "note": "v3.0.1 diagnostic wrapper preserves v3.0 behavior, fixes the installed base-version path, and displays Kakao HTTP status, code, msg, and response body when Kakao test sending fails."
+  "note": "v3.1 adds Windows DPAPI-secured Naver credentials and Kakao token migration, hidden Windows login autostart, catch-up scheduling for 07:40/11:40/17:40, immediate briefing test, detailed Kakao errors, and per-batch briefing history."
 }
