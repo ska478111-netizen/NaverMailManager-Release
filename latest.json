@@ -1,14 +1,14 @@
 {
-  "version": "2.4",
+  "version": "2.4.1",
   "active": true,
   "deployment_mode": "text-files",
   "entry": "app.py",
   "files": [
     {
       "path": "app.py",
-      "url": "https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.4/app.py",
-      "sha256": "22d3cb617fdcace17a56378da7d9775f66073794fef3f308e67b19378b8bda86",
-      "size": 29365
+      "url": "https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.4.1/app.py",
+      "sha256": "e6fb097f0f134553698aaf6600b6ab8e6a54786cdd212563b6fab1543b1d64a9",
+      "size": 29369
     }
   ],
   "min_launcher": "1.1",
@@ -18,5 +18,5 @@
     "rollback_on_failure": true,
     "automatic_server_mail_delete": false
   },
-  "note": "v2.4 public text-file deployment is active. File size and Git blob identity were verified before activation."
+  "note": "v2.4.1 automatic-update verification build. Functional logic is unchanged from v2.4; window title identifies successful update."
 }
