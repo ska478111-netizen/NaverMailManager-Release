@@ -1,7 +1,7 @@
 {
-  "version":"2.7.2","active":true,"deployment_mode":"text-files","entry":"app.py",
-  "files":[{"path":"app.py","url":"https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.7.2/app.py","sha256":"3630dc4a198f30ec047a0d9fcc011d654e7b68c8a341715b77cce263d20ce278","size":38348}],
+  "version":"2.7.3","active":true,"deployment_mode":"text-files","entry":"app.py",
+  "files":[{"path":"app.py","url":"https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.7.3/app.py","sha256":"65d2d96cbd7d216c854cc15365b5cbe24ddb75580c9d0d9ac2f424c0a08e40bc","size":38530}],
   "min_launcher":"1.1",
   "safety":{"preserve_user_data":true,"syntax_check_before_switch":true,"rollback_on_failure":true,"automatic_server_mail_delete":false},
-  "note":"v2.7.2 separates must-read total from unreviewed count. Focus review remains limited to locally unreviewed must-read messages; reviewed state is preserved. Naver Seen sync remains read-only and is labeled as reference sync."
+  "note":"v2.7.3 visually separates the focus-review control from learning controls and labels it as unreviewed-only. The focus button is explicitly bound to focus_review; learning controls remain separate."
 }
