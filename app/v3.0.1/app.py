@@ -2,7 +2,7 @@ import sys, json, urllib.parse, urllib.request
 from pathlib import Path
 import importlib.util
 
-base = Path(__file__).resolve().parents[1] / 'v3.0' / 'app.py'
+base = Path(__file__).resolve().parents[1] / '3.0' / 'app.py'
 if not base.exists():
     raise RuntimeError('v3.0 기반 파일을 찾을 수 없습니다: ' + str(base))
 spec = importlib.util.spec_from_file_location('nmm_v30', str(base))
