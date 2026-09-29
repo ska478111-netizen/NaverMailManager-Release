@@ -1,9 +1,22 @@
 {
   "version": "2.4",
   "active": false,
-  "package_url": "https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/packages/NaverMailManager-v2.4.zip",
-  "sha256": "a50eaf008492c842ecf26928250dfc937b5f125a16dea0ad7894dfe446639c1f",
+  "deployment_mode": "text-files",
   "entry": "app.py",
-  "min_launcher": "1.0",
-  "note": "Staged manifest. Activation remains false until the public package is present and verified."
+  "files": [
+    {
+      "path": "app.py",
+      "url": "https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.4/app.py",
+      "sha256": "22d3cb617fdcace17a56378da7d9775f66073794fef3f308e67b19378b8bda86",
+      "size": 29365
+    }
+  ],
+  "min_launcher": "1.1",
+  "safety": {
+    "preserve_user_data": true,
+    "syntax_check_before_switch": true,
+    "rollback_on_failure": true,
+    "automatic_server_mail_delete": false
+  },
+  "note": "Inactive until app/v2.4/app.py is published and its public content hash is verified."
 }
