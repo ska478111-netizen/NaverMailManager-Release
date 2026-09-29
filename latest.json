@@ -1,7 +1,7 @@
 {
-  "version":"2.7.1","active":true,"deployment_mode":"text-files","entry":"app.py",
-  "files":[{"path":"app.py","url":"https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.7.1/app.py","sha256":"ee9a627ac64c5b1f60d0d9e4d3e0c9fa013ee526e7f53325b082ce2d17d4f076","size":38089}],
+  "version":"2.7.2","active":true,"deployment_mode":"text-files","entry":"app.py",
+  "files":[{"path":"app.py","url":"https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.7.2/app.py","sha256":"3630dc4a198f30ec047a0d9fcc011d654e7b68c8a341715b77cce263d20ce278","size":38348}],
   "min_launcher":"1.1",
   "safety":{"preserve_user_data":true,"syntax_check_before_switch":true,"rollback_on_failure":true,"automatic_server_mail_delete":false},
-  "note":"v2.7.1 adds read-only IMAP Seen-state synchronization. Naver messages already marked Seen are reflected as locally reviewed; existing local reviewed status is never reset."
+  "note":"v2.7.2 separates must-read total from unreviewed count. Focus review remains limited to locally unreviewed must-read messages; reviewed state is preserved. Naver Seen sync remains read-only and is labeled as reference sync."
 }
