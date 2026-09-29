@@ -1,14 +1,14 @@
 {
-  "version": "3.1",
+  "version": "3.1.1",
   "active": true,
   "deployment_mode": "text-files",
   "entry": "app.py",
   "files": [
     {
       "path": "app.py",
-      "url": "https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v3.1/app.py",
-      "sha256": "e880b982881142f2a90ee1d0ef999d1d0583be1d06bc4d31d6d1c0feb2a6ae08",
-      "size": 62556
+      "url": "https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v3.1.1/app.py",
+      "sha256": "5968b9af2cb8572db4e1798583482c28815f736cc86948bc0be6a8e7686e7834",
+      "size": 63893
     }
   ],
   "min_launcher": "1.1",
@@ -18,5 +18,5 @@
     "rollback_on_failure": true,
     "automatic_server_mail_delete": false
   },
-  "note": "v3.1 adds Windows DPAPI-secured Naver credentials and Kakao token migration, hidden Windows login autostart, catch-up scheduling for 07:40/11:40/17:40, immediate briefing test, detailed Kakao errors, and per-batch briefing history."
+  "note": "v3.1.1 cleans Kakao briefing text by decoding HTML entities, removing tags, URLs, email addresses, forwarded-mail headers and repeated separators, while preserving v3.1 DPAPI credential storage, autostart, catch-up scheduling, and safe no-auto-delete behavior."
 }
