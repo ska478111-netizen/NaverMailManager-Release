@@ -1,7 +1,7 @@
 {
-  "version":"2.8.1","active":true,"deployment_mode":"text-files","entry":"app.py",
-  "files":[{"path":"app.py","url":"https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.8.1/app.py","sha256":"0d43e8bbd043178000c29986124df72dbcf8cf758358b80492d04e9ecf64aa4c","size":41356}],
+  "version":"2.9","active":true,"deployment_mode":"text-files","entry":"app.py",
+  "files":[{"path":"app.py","url":"https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.9/app.py","sha256":"c446ff3087dd871280d2b6ccbf08a108e9666e04a2f424b8ee6d31e65845cc59","size":43784}],
   "min_launcher":"1.1",
   "safety":{"preserve_user_data":true,"syntax_check_before_switch":true,"rollback_on_failure":true,"automatic_server_mail_delete":false},
-  "note":"v2.8.1 checks locally unreviewed must-read messages after collection. If any remain, it asks whether to open focus review; focus review opens only after explicit user approval."
+  "note":"v2.9 adds configurable 5-120 minute automatic new-mail checks. App password is held only in process memory after one manual login and is never written to disk. Automatic checks stay silent unless unreviewed must-read mail requires attention."
 }
