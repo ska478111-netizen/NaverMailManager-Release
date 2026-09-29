@@ -1,14 +1,14 @@
 {
-  "version": "2.4.1",
+  "version": "2.5",
   "active": true,
   "deployment_mode": "text-files",
   "entry": "app.py",
   "files": [
     {
       "path": "app.py",
-      "url": "https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.4.1/app.py",
-      "sha256": "e6fb097f0f134553698aaf6600b6ab8e6a54786cdd212563b6fab1543b1d64a9",
-      "size": 29369
+      "url": "https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.5/app.py",
+      "sha256": "1ab080dec3c0bf45a88b9b4e0d1016bc20d66e27591276898646d0fda15a159c",
+      "size": 30551
     }
   ],
   "min_launcher": "1.1",
@@ -18,5 +18,5 @@
     "rollback_on_failure": true,
     "automatic_server_mail_delete": false
   },
-  "note": "v2.4.1 automatic-update verification build. Functional logic is unchanged from v2.4; window title identifies successful update."
+  "note": "v2.5 applies user learning immediately to up to 1,000 stored mails after each manual learning action. Server mail is not moved or deleted by learning."
 }
