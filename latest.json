@@ -1,7 +1,7 @@
 {
-  "version":"2.7.3","active":true,"deployment_mode":"text-files","entry":"app.py",
-  "files":[{"path":"app.py","url":"https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.7.3/app.py","sha256":"65d2d96cbd7d216c854cc15365b5cbe24ddb75580c9d0d9ac2f424c0a08e40bc","size":38530}],
+  "version":"2.7.4","active":true,"deployment_mode":"text-files","entry":"app.py",
+  "files":[{"path":"app.py","url":"https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.7.4/app.py","sha256":"edca08a3a153cd3592b2e3ce414b340f563d571e10ed22dd5eb7676ffe8ca938","size":39364}],
   "min_launcher":"1.1",
   "safety":{"preserve_user_data":true,"syntax_check_before_switch":true,"rollback_on_failure":true,"automatic_server_mail_delete":false},
-  "note":"v2.7.3 visually separates the focus-review control from learning controls and labels it as unreviewed-only. The focus button is explicitly bound to focus_review; learning controls remain separate."
+  "note":"v2.7.4 rebuilds focus review as an independent DB-driven flow. Opening focus review ignores the main-list selection; learning is invoked only by explicit buttons inside the review window."
 }
