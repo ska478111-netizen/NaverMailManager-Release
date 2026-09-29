@@ -183,8 +183,10 @@ def clean_brief_text(value, limit=180):
     t=re.sub(r'(?i)\b[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}\b',' ',t)
     t=re.sub(r'(?i)(보낸\s*사람|받는\s*사람|수신|발신|from|to|cc|bcc|sent|subject)\s*[:：][^\n|]{0,160}',' ',t)
     t=re.sub(r'(?i)-{2,}\s*(original message|원본 메시지|전달된 메시지)\s*-{2,}',' ',t)
+    t=re.sub(r'(?i)\b(원본 메일|전달 메일|전달된 메일|original message|forwarded message)\b',' ',t)
     t=re.sub(r'&(?:nbsp|lt|gt|amp|quot|#\d+);',' ',t,flags=re.I)
     t=re.sub(r'[<>]',' ',t)
+    t=re.sub(r'[-_=]{3,}',' ',t)
     t=re.sub(r'\s+',' ',t).strip(' -|,;')
     return t[:limit]
 
