@@ -1,10 +1,7 @@
 {
-  "version": "2.7",
-  "active": true,
-  "deployment_mode": "text-files",
-  "entry": "app.py",
-  "files": [{"path":"app.py","url":"https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.7/app.py","sha256":"864cfc189a1ae8cf9672e550a20402264003a31aebd0634453b7d00ba2472dd3","size":35713}],
-  "min_launcher": "1.1",
-  "safety": {"preserve_user_data":true,"syntax_check_before_switch":true,"rollback_on_failure":true,"automatic_server_mail_delete":false},
-  "note": "v2.7 adds focused must-read review: remaining-count display, summary/reason view, one-click reviewed-and-next, learning actions, and list handoff. Existing learning preview and duplicate protection remain."
+  "version":"2.7.1","active":true,"deployment_mode":"text-files","entry":"app.py",
+  "files":[{"path":"app.py","url":"https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.7.1/app.py","sha256":"ee9a627ac64c5b1f60d0d9e4d3e0c9fa013ee526e7f53325b082ce2d17d4f076","size":38089}],
+  "min_launcher":"1.1",
+  "safety":{"preserve_user_data":true,"syntax_check_before_switch":true,"rollback_on_failure":true,"automatic_server_mail_delete":false},
+  "note":"v2.7.1 adds read-only IMAP Seen-state synchronization. Naver messages already marked Seen are reflected as locally reviewed; existing local reviewed status is never reset."
 }
