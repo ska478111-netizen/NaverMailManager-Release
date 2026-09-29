@@ -1,14 +1,14 @@
 {
-  "version": "2.5",
+  "version": "2.5.1",
   "active": true,
   "deployment_mode": "text-files",
   "entry": "app.py",
   "files": [
     {
       "path": "app.py",
-      "url": "https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.5/app.py",
-      "sha256": "1ab080dec3c0bf45a88b9b4e0d1016bc20d66e27591276898646d0fda15a159c",
-      "size": 30551
+      "url": "https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.5.1/app.py",
+      "sha256": "0e65101b07769f231199b942bed2292381b83235e3f8679159e98ecc7162cc1a",
+      "size": 31081
     }
   ],
   "min_launcher": "1.1",
@@ -18,5 +18,5 @@
     "rollback_on_failure": true,
     "automatic_server_mail_delete": false
   },
-  "note": "v2.5 applies user learning immediately to up to 1,000 stored mails after each manual learning action. Server mail is not moved or deleted by learning."
+  "note": "v2.5.1 captures bucket counts before learning and shows before/after deltas after immediate reclassification. The launcher performs Python syntax validation before version switching."
 }
