@@ -1,22 +1,10 @@
 {
-  "version": "2.6",
+  "version": "2.7",
   "active": true,
   "deployment_mode": "text-files",
   "entry": "app.py",
-  "files": [
-    {
-      "path": "app.py",
-      "url": "https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.6/app.py",
-      "sha256": "dd0eda6acd7d5273862866edf2272135dcd48e70c62ea2c01cc9988275cd621d",
-      "size": 33319
-    }
-  ],
+  "files": [{"path":"app.py","url":"https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v2.7/app.py","sha256":"864cfc189a1ae8cf9672e550a20402264003a31aebd0634453b7d00ba2472dd3","size":35713}],
   "min_launcher": "1.1",
-  "safety": {
-    "preserve_user_data": true,
-    "syntax_check_before_switch": true,
-    "rollback_on_failure": true,
-    "automatic_server_mail_delete": false
-  },
-  "note": "v2.6 detects exact duplicate learning rules, skips redundant reclassification, previews similar-mail impact within the latest 1,000 stored messages, and keeps server deletion manual only."
+  "safety": {"preserve_user_data":true,"syntax_check_before_switch":true,"rollback_on_failure":true,"automatic_server_mail_delete":false},
+  "note": "v2.7 adds focused must-read review: remaining-count display, summary/reason view, one-click reviewed-and-next, learning actions, and list handoff. Existing learning preview and duplicate protection remain."
 }
