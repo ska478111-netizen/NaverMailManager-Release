@@ -1,6 +1,6 @@
 {
   "version": "2.4",
-  "active": false,
+  "active": true,
   "deployment_mode": "text-files",
   "entry": "app.py",
   "files": [
@@ -18,5 +18,5 @@
     "rollback_on_failure": true,
     "automatic_server_mail_delete": false
   },
-  "note": "Inactive until app/v2.4/app.py is published and its public content hash is verified."
+  "note": "v2.4 public text-file deployment is active. File size and Git blob identity were verified before activation."
 }
