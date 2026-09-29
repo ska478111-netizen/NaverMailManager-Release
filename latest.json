@@ -1,7 +1,7 @@
 {
-  "version":"3.0","active":true,"deployment_mode":"text-files","entry":"app.py",
-  "files":[{"path":"app.py","url":"https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v3.0/app.py","sha256":"ff26e3211df5bd6ad4507fd739e26b1193f69bab70e6d5384418aa5472eabbdc","size":52112}],
+  "version":"3.0.1","active":true,"deployment_mode":"text-files","entry":"app.py",
+  "files":[{"path":"app.py","url":"https://raw.githubusercontent.com/ska478111-netizen/NaverMailManager-Release/main/app/v3.0.1/app.py","sha256":"566fe024536c6419594ad292b7e0063b01c33b6b73ca7ebe8a3af847a85db62e","size":2363}],
   "min_launcher":"1.1",
   "safety":{"preserve_user_data":true,"syntax_check_before_switch":true,"rollback_on_failure":true,"automatic_server_mail_delete":false},
-  "note":"v3.0 adds Kakao My Chatroom OAuth/test send and scheduled must-read briefings at 07:40, 11:40, and 17:40. Briefing history prevents repeat Kakao alerts. Scheduled mail collection uses the in-memory Naver app password while the app is running; no automatic server mail deletion."
+  "note":"v3.0.1 diagnostic wrapper preserves v3.0 behavior and displays Kakao HTTP status, code, msg, and response body when Kakao test sending fails."
 }
