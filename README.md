@@ -1,0 +1,1 @@
+# NaverMailManager-Release
